@@ -14,6 +14,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         Parse.setApplicationId("REDACTED", clientKey: "REDACTED")
+        
+        /*
         var score = PFObject(className: "score")
         score.setObject("Rommel", forKey: "name")
         score.setObject(23, forKey: "number")
@@ -24,6 +26,27 @@ class ViewController: UIViewController {
                 NSLog("ERROR: \(error)")
             }
         }
+        */
+        
+        //Retrieving data from Parse
+        var query = PFQuery(className: "score")
+        query.getObjectInBackgroundWithId("aeSjso2Ysm", block: { (score, error) -> Void in
+            if(error == nil) {
+                //var value = score.objectForKey("number") as NSNumber
+                //NSLog("The score object is: \(value)")
+                
+                //Another way
+                //var value = score["name"]
+                //NSLog("The score object is: \(value)")
+                
+                //Updating the score.
+                score["name"] = "Rommel"
+                score["number"] = 137
+                score.save()
+            } else {
+                NSLog("ERROR: \(error)")
+            }
+        })
     }
 
     override func didReceiveMemoryWarning() {
