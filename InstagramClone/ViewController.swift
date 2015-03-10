@@ -8,14 +8,38 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+    @IBOutlet weak var myImageView: UIImageView!
 
+    @IBAction func doTakePhoto(sender: AnyObject) {
+        var image = UIImagePickerController()
+        image.delegate = self
+        image.sourceType = UIImagePickerControllerSourceType.Camera
+        image.allowsEditing = false
+        self.presentViewController(image, animated: true, completion: nil)
+
+    }
+    
+    @IBAction func doPickImage(sender: AnyObject) {
+        var image = UIImagePickerController()
+        image.delegate = self
+        image.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+        image.allowsEditing = false
+        self.presentViewController(image, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
+        NSLog("Image selected")
+        self.dismissViewControllerAnimated(true, completion: nil)
+        myImageView.image = image
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        /*
         Parse.setApplicationId("REDACTED", clientKey: "REDACTED")
         
-        /*
         var score = PFObject(className: "score")
         score.setObject("Rommel", forKey: "name")
         score.setObject(23, forKey: "number")
@@ -26,7 +50,6 @@ class ViewController: UIViewController {
                 NSLog("ERROR: \(error)")
             }
         }
-        */
         
         //Retrieving data from Parse
         var query = PFQuery(className: "score")
@@ -47,6 +70,10 @@ class ViewController: UIViewController {
                 NSLog("ERROR: \(error)")
             }
         })
+        */
+        
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
