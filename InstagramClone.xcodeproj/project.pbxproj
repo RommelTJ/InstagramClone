@@ -39,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7702BD181AAE196E002B6775 /* InstagramClone-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "InstagramClone-Bridging-Header.h"; sourceTree = "<group>"; };
 		776851E81AADFDCE009E5B73 /* InstagramClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		776851EC1AADFDCE009E5B73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		776851ED1AADFDCE009E5B73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -135,6 +136,7 @@
 				776851F41AADFDCE009E5B73 /* Images.xcassets */,
 				776851F61AADFDCE009E5B73 /* LaunchScreen.xib */,
 				776851EB1AADFDCE009E5B73 /* Supporting Files */,
+				7702BD181AAE196E002B6775 /* InstagramClone-Bridging-Header.h */,
 			);
 			path = InstagramClone;
 			sourceTree = "<group>";
@@ -390,6 +392,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/InstagramClone",
@@ -397,6 +400,8 @@
 				INFOPLIST_FILE = InstagramClone/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "InstagramClone/InstagramClone-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -404,6 +409,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/InstagramClone",
@@ -411,6 +417,7 @@
 				INFOPLIST_FILE = InstagramClone/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "InstagramClone/InstagramClone-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -467,6 +474,7 @@
 				776852091AADFDCE009E5B73 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7768520A1AADFDCE009E5B73 /* Build configuration list for PBXNativeTarget "InstagramCloneTests" */ = {
 			isa = XCConfigurationList;
@@ -475,6 +483,7 @@
 				7768520C1AADFDCE009E5B73 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
