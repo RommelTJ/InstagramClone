@@ -10,14 +10,29 @@ import UIKit
 
 class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     @IBOutlet weak var myImageView: UIImageView!
-
-    @IBAction func doTakePhoto(sender: AnyObject) {
-        var image = UIImagePickerController()
-        image.delegate = self
-        image.sourceType = UIImagePickerControllerSourceType.Camera
-        image.allowsEditing = false
-        self.presentViewController(image, animated: true, completion: nil)
-
+    var activityIndicator: UIActivityIndicatorView!
+    
+    @IBAction func doCreateAlert(sender: AnyObject) {
+        var alert = UIAlertController(title: "Hey There!", message: "Are you sure?", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }))
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    @IBAction func doRestoreApp(sender: AnyObject) {
+        activityIndicator.stopAnimating()
+//        UIApplication.sharedApplication().endIgnoringInteractionEvents()
+    }
+    
+    @IBAction func doPauseApp(sender: AnyObject) {
+        activityIndicator = UIActivityIndicatorView(frame: CGRectMake(0, 0, 50, 50))
+        activityIndicator.center = self.view.center
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
+        myImageView.addSubview(activityIndicator)
+        activityIndicator.startAnimating()
+//        UIApplication.sharedApplication().beginIgnoringInteractionEvents()
     }
     
     @IBAction func doPickImage(sender: AnyObject) {
