@@ -11,10 +11,24 @@ import UIKit
 class UserTableViewController: UITableViewController {
     var users = [String]()
     var following = [Bool]()
+    var refresher: UIRefreshControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        updateUsers()
+        
+        refresher = UIRefreshControl()
+        refresher.attributedTitle = NSAttributedString(string: "Pull to Refresh!")
+        refresher.addTarget(self, action: "refresh", forControlEvents: UIControlEvents.ValueChanged)
+        self.tableView.addSubview(refresher)
+    }
 
+    func refresh() {
+        updateUsers()
+    }
+    
+    func updateUsers() {
         var query = PFUser.query()
         query.findObjectsInBackgroundWithBlock { (objects: [AnyObject]!, error: NSError!) -> Void in
             self.users.removeAll(keepCapacity: true)
@@ -40,12 +54,13 @@ class UserTableViewController: UITableViewController {
                         } else {
                             NSLog("Error: \(error)")
                         }
+                        self.refresher.endRefreshing()
                     })
                 }
             }
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
