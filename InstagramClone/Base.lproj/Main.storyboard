@@ -35,7 +35,7 @@
                                     <constraint firstAttribute="width" constant="150" id="PwZ-Je-8eS"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P2C-2N-rQK">
                                 <rect key="frame" x="277" y="290" width="55" height="30"/>
@@ -54,11 +54,37 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Already registered?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OpW-Oj-0On">
+                                <rect key="frame" x="195" y="332" width="154" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uh2-NF-xei">
+                                <rect key="frame" x="363" y="328" width="43" height="30"/>
+                                <state key="normal" title="Log In">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="toggleSignUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jld-Zw-aOV"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mec-lZ-hml">
+                                <rect key="frame" x="276" y="332" width="48" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="567-7w-Kgp"/>
+                                    <constraint firstAttribute="height" constant="21" id="pkd-DA-hkq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="aDt-10-h9N" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="4Mu-Hi-bqS"/>
                             <constraint firstItem="mt5-v0-RWX" firstAttribute="top" secondItem="lGq-T2-SZE" secondAttribute="bottom" constant="19" id="61T-7g-6Q4"/>
+                            <constraint firstItem="Mec-lZ-hml" firstAttribute="top" secondItem="P2C-2N-rQK" secondAttribute="bottom" constant="12" id="9TA-Sf-CBx"/>
                             <constraint firstItem="P2C-2N-rQK" firstAttribute="top" secondItem="mt5-v0-RWX" secondAttribute="bottom" constant="25" id="ENk-04-3FG"/>
                             <constraint firstAttribute="centerX" secondItem="mt5-v0-RWX" secondAttribute="centerX" id="LcN-mK-VNY"/>
                             <constraint firstItem="aDt-10-h9N" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="QJH-nO-fZa"/>
@@ -67,14 +93,21 @@
                             <constraint firstItem="cts-OX-xex" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="WQV-OM-OXg"/>
                             <constraint firstItem="cts-OX-xex" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="bME-Cg-7jl"/>
                             <constraint firstAttribute="centerX" secondItem="mt5-v0-RWX" secondAttribute="centerX" id="kEa-B2-rjo"/>
+                            <constraint firstItem="uh2-NF-xei" firstAttribute="leading" secondItem="Mec-lZ-hml" secondAttribute="trailing" constant="39" id="lgL-mi-12b"/>
+                            <constraint firstAttribute="centerX" secondItem="Mec-lZ-hml" secondAttribute="centerX" id="mzY-qo-CSC"/>
                             <constraint firstItem="aDt-10-h9N" firstAttribute="top" secondItem="cts-OX-xex" secondAttribute="bottom" constant="35" id="s6o-wk-zc0"/>
                             <constraint firstAttribute="centerX" secondItem="lGq-T2-SZE" secondAttribute="centerX" id="sL8-Ml-2uY"/>
+                            <constraint firstItem="Mec-lZ-hml" firstAttribute="leading" secondItem="OpW-Oj-0On" secondAttribute="trailing" constant="-73" id="v9J-61-3Pt"/>
                             <constraint firstAttribute="centerX" secondItem="P2C-2N-rQK" secondAttribute="centerX" id="wSc-QT-4wQ"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="alreadyRegistered" destination="OpW-Oj-0On" id="Fzx-cV-FcH"/>
                         <outlet property="myPassword" destination="mt5-v0-RWX" id="Zs9-Q0-7N4"/>
                         <outlet property="myUsername" destination="lGq-T2-SZE" id="1rw-Ju-h0p"/>
+                        <outlet property="signUpButton" destination="P2C-2N-rQK" id="uNd-Dq-FQN"/>
+                        <outlet property="signUpLabel" destination="aDt-10-h9N" id="fYU-O6-Jlv"/>
+                        <outlet property="signUpToggleButton" destination="uh2-NF-xei" id="WC9-ES-AjV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
