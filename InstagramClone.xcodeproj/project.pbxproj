@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7755F2701AB143980031F494 /* UserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7755F26F1AB143980031F494 /* UserTableViewController.swift */; };
 		776851EE1AADFDCE009E5B73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776851ED1AADFDCE009E5B73 /* AppDelegate.swift */; };
 		776851F01AADFDCE009E5B73 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776851EF1AADFDCE009E5B73 /* ViewController.swift */; };
 		776851F31AADFDCE009E5B73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 776851F11AADFDCE009E5B73 /* Main.storyboard */; };
@@ -40,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		7702BD181AAE196E002B6775 /* InstagramClone-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "InstagramClone-Bridging-Header.h"; sourceTree = "<group>"; };
+		7755F26F1AB143980031F494 /* UserTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewController.swift; sourceTree = "<group>"; };
 		776851E81AADFDCE009E5B73 /* InstagramClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		776851EC1AADFDCE009E5B73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		776851ED1AADFDCE009E5B73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				776851ED1AADFDCE009E5B73 /* AppDelegate.swift */,
 				776851EF1AADFDCE009E5B73 /* ViewController.swift */,
 				776851F11AADFDCE009E5B73 /* Main.storyboard */,
+				7755F26F1AB143980031F494 /* UserTableViewController.swift */,
 				776851F41AADFDCE009E5B73 /* Images.xcassets */,
 				776851F61AADFDCE009E5B73 /* LaunchScreen.xib */,
 				776851EB1AADFDCE009E5B73 /* Supporting Files */,
@@ -267,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				776851F01AADFDCE009E5B73 /* ViewController.swift in Sources */,
+				7755F2701AB143980031F494 /* UserTableViewController.swift in Sources */,
 				776851EE1AADFDCE009E5B73 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
