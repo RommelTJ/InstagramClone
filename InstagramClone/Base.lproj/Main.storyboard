@@ -115,7 +115,7 @@
             </objects>
             <point key="canvasLocation" x="-730" y="739"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Users-->
         <scene sceneID="Z9k-ZD-lqz">
             <objects>
                 <tableViewController id="qVi-bP-VUV" customClass="UserTableViewController" customModule="InstagramClone" customModuleProvider="target" sceneMemberID="viewController">
@@ -136,11 +136,81 @@
                             <outlet property="delegate" destination="qVi-bP-VUV" id="Msj-kc-FRE"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="dQd-Qh-oEu"/>
+                    <navigationItem key="navigationItem" title="Users" id="dQd-Qh-oEu">
+                        <barButtonItem key="rightBarButtonItem" title="Post" id="1or-Xv-fqW">
+                            <connections>
+                                <segue destination="IXK-WV-xBi" kind="show" id="Td1-XG-fUV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n5u-tK-Vcw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="785" y="739"/>
+        </scene>
+        <!--Post View Controller-->
+        <scene sceneID="fFf-Ja-9IA">
+            <objects>
+                <viewController id="IXK-WV-xBi" customClass="PostViewController" customModule="InstagramClone" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bC9-p1-gsa"/>
+                        <viewControllerLayoutGuide type="bottom" id="Mm6-aD-02x"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PBT-PN-m0O">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ib-yr-8k0">
+                                <rect key="frame" x="240" y="230" width="121" height="30"/>
+                                <state key="normal" title="Choose an Image">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="doChooseImage:" destination="IXK-WV-xBi" eventType="touchUpInside" id="bTG-Kg-PKb"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What do you want to share?" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YM4-Ma-bO3">
+                                <rect key="frame" x="16" y="268" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wpU-6K-oBK">
+                                <rect key="frame" x="240" y="306" width="121" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.40000000000000002" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Post an Image">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="doPostImage:" destination="IXK-WV-xBi" eventType="touchUpInside" id="9wt-xl-jng"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Blank_woman_placeholder.svg.png" translatesAutoresizingMaskIntoConstraints="NO" id="vzZ-Xf-a81">
+                                <rect key="frame" x="225" y="72" width="150" height="150"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="1Ib-yr-8k0" secondAttribute="centerX" id="3Vm-w6-Dqo"/>
+                            <constraint firstItem="YM4-Ma-bO3" firstAttribute="trailing" secondItem="PBT-PN-m0O" secondAttribute="trailingMargin" id="UL5-yB-N1w"/>
+                            <constraint firstItem="vzZ-Xf-a81" firstAttribute="top" secondItem="bC9-p1-gsa" secondAttribute="bottom" constant="8" id="VCZ-cO-CWk"/>
+                            <constraint firstItem="YM4-Ma-bO3" firstAttribute="top" secondItem="1Ib-yr-8k0" secondAttribute="bottom" constant="8" id="aIO-73-Ekr"/>
+                            <constraint firstItem="wpU-6K-oBK" firstAttribute="top" secondItem="YM4-Ma-bO3" secondAttribute="bottom" constant="8" id="ajN-Yo-fzN"/>
+                            <constraint firstItem="1Ib-yr-8k0" firstAttribute="top" secondItem="vzZ-Xf-a81" secondAttribute="bottom" constant="8" id="bLP-TS-iVe"/>
+                            <constraint firstItem="YM4-Ma-bO3" firstAttribute="leading" secondItem="PBT-PN-m0O" secondAttribute="leadingMargin" id="gD9-oa-7I8"/>
+                            <constraint firstAttribute="centerX" secondItem="vzZ-Xf-a81" secondAttribute="centerX" id="oWG-T6-KH7"/>
+                            <constraint firstAttribute="centerX" secondItem="wpU-6K-oBK" secondAttribute="centerX" id="wJc-kD-iXk"/>
+                            <constraint firstItem="wpU-6K-oBK" firstAttribute="top" secondItem="YM4-Ma-bO3" secondAttribute="bottom" constant="8" id="xYy-Xi-RsY"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="myImageView" destination="vzZ-Xf-a81" id="4Hs-9u-Gj3"/>
+                        <outlet property="myTextField" destination="YM4-Ma-bO3" id="A32-B7-nl9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bj6-ek-Dds" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1512" y="739"/>
         </scene>
         <!--NavController-->
         <scene sceneID="9Q8-sT-sxi">
@@ -159,4 +229,7 @@
             <point key="canvasLocation" x="20" y="738"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Blank_woman_placeholder.svg.png" width="128" height="128"/>
+    </resources>
 </document>
