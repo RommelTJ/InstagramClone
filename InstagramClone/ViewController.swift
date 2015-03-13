@@ -70,6 +70,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
                     UIApplication.sharedApplication().endIgnoringInteractionEvents()
                     if signupError == nil {
                         //Hooray! Let them user the app now.
+                        self.performSegueWithIdentifier("jumpToUserTable", sender: self)
                         NSLog("Success!")
                     } else {
                         if let errorString = signupError.userInfo?["error"] as? NSString {
@@ -105,6 +106,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     override func viewDidAppear(animated: Bool) {
         if PFUser.currentUser() != nil {
+            NSLog("\(PFUser.currentUser().username)")
             self.performSegueWithIdentifier("jumpToUserTable", sender: self)
         }
     }

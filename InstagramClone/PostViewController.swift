@@ -31,6 +31,13 @@ class PostViewController: UIViewController, UINavigationControllerDelegate, UIIm
         photoSelected = true
     }
     
+    @IBAction func doLogout(sender: AnyObject) {
+        PFUser.logOut()
+        NSLog("Logged Out")
+        
+        self.performSegueWithIdentifier("logout", sender: self)
+    }
+    
     @IBAction func doPostImage(sender: AnyObject) {
         var error = ""
         if photoSelected == false {

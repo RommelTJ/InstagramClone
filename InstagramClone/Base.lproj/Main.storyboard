@@ -20,13 +20,13 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Welcome to Instagram Clone!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cts-OX-xex">
                                 <rect key="frame" x="16" y="28" width="568" height="22"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Use the form below to sign up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aDt-10-h9N">
                                 <rect key="frame" x="16" y="85" width="568" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mt5-v0-RWX">
@@ -57,7 +57,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Already registered?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OpW-Oj-0On">
                                 <rect key="frame" x="195" y="332" width="154" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uh2-NF-xei">
@@ -76,7 +76,7 @@
                                     <constraint firstAttribute="height" constant="21" id="pkd-DA-hkq"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -188,19 +188,33 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Blank_woman_placeholder.svg.png" translatesAutoresizingMaskIntoConstraints="NO" id="vzZ-Xf-a81">
                                 <rect key="frame" x="225" y="72" width="150" height="150"/>
                             </imageView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nAx-Dq-0wo">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem title="Logout" id="frL-kA-bG0">
+                                        <connections>
+                                            <action selector="doLogout:" destination="IXK-WV-xBi" id="i2n-0j-GWs"/>
+                                            <segue destination="BYZ-38-t0r" kind="show" identifier="logout" id="Zsx-LF-eN3"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="1Ib-yr-8k0" secondAttribute="centerX" id="3Vm-w6-Dqo"/>
                             <constraint firstItem="YM4-Ma-bO3" firstAttribute="trailing" secondItem="PBT-PN-m0O" secondAttribute="trailingMargin" id="UL5-yB-N1w"/>
                             <constraint firstItem="vzZ-Xf-a81" firstAttribute="top" secondItem="bC9-p1-gsa" secondAttribute="bottom" constant="8" id="VCZ-cO-CWk"/>
+                            <constraint firstItem="nAx-Dq-0wo" firstAttribute="leading" secondItem="PBT-PN-m0O" secondAttribute="leadingMargin" constant="-16" id="ZP1-2n-YF3"/>
                             <constraint firstItem="YM4-Ma-bO3" firstAttribute="top" secondItem="1Ib-yr-8k0" secondAttribute="bottom" constant="8" id="aIO-73-Ekr"/>
                             <constraint firstItem="wpU-6K-oBK" firstAttribute="top" secondItem="YM4-Ma-bO3" secondAttribute="bottom" constant="8" id="ajN-Yo-fzN"/>
                             <constraint firstItem="1Ib-yr-8k0" firstAttribute="top" secondItem="vzZ-Xf-a81" secondAttribute="bottom" constant="8" id="bLP-TS-iVe"/>
                             <constraint firstItem="YM4-Ma-bO3" firstAttribute="leading" secondItem="PBT-PN-m0O" secondAttribute="leadingMargin" id="gD9-oa-7I8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nAx-Dq-0wo" secondAttribute="trailing" constant="-16" id="oCo-dU-oyA"/>
                             <constraint firstAttribute="centerX" secondItem="vzZ-Xf-a81" secondAttribute="centerX" id="oWG-T6-KH7"/>
                             <constraint firstAttribute="centerX" secondItem="wpU-6K-oBK" secondAttribute="centerX" id="wJc-kD-iXk"/>
                             <constraint firstItem="wpU-6K-oBK" firstAttribute="top" secondItem="YM4-Ma-bO3" secondAttribute="bottom" constant="8" id="xYy-Xi-RsY"/>
+                            <constraint firstItem="Mm6-aD-02x" firstAttribute="top" secondItem="nAx-Dq-0wo" secondAttribute="bottom" id="zEb-i4-hPh"/>
                         </constraints>
                     </view>
                     <connections>
