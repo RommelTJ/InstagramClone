@@ -87,6 +87,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
                     UIApplication.sharedApplication().endIgnoringInteractionEvents()
                     if (loginError == nil) {
                         //Succesful login.
+                        self.performSegueWithIdentifier("jumpToUserTable", sender: self)
+                        NSLog("Success!")
                     } else {
                         if let errorString = loginError.userInfo?["error"] as? NSString {
                             error = errorString
@@ -114,6 +116,14 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.navigationBarHidden = true
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        self.navigationController?.navigationBarHidden = false
     }
 
 
