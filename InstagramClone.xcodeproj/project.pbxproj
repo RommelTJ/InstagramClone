@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		771D273A1AB20B91008B2034 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771D27391AB20B91008B2034 /* PostViewController.swift */; };
+		771D273C1AB20C48008B2034 /* Blank_woman_placeholder.svg.png in Resources */ = {isa = PBXBuildFile; fileRef = 771D273B1AB20C48008B2034 /* Blank_woman_placeholder.svg.png */; };
 		7755F2701AB143980031F494 /* UserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7755F26F1AB143980031F494 /* UserTableViewController.swift */; };
 		776851EE1AADFDCE009E5B73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776851ED1AADFDCE009E5B73 /* AppDelegate.swift */; };
 		776851F01AADFDCE009E5B73 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776851EF1AADFDCE009E5B73 /* ViewController.swift */; };
@@ -41,6 +43,8 @@
 
 /* Begin PBXFileReference section */
 		7702BD181AAE196E002B6775 /* InstagramClone-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "InstagramClone-Bridging-Header.h"; sourceTree = "<group>"; };
+		771D27391AB20B91008B2034 /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		771D273B1AB20C48008B2034 /* Blank_woman_placeholder.svg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Blank_woman_placeholder.svg.png; path = ../../../../../Downloads/Blank_woman_placeholder.svg.png; sourceTree = "<group>"; };
 		7755F26F1AB143980031F494 /* UserTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewController.swift; sourceTree = "<group>"; };
 		776851E81AADFDCE009E5B73 /* InstagramClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		776851EC1AADFDCE009E5B73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -135,6 +139,8 @@
 				776851ED1AADFDCE009E5B73 /* AppDelegate.swift */,
 				776851EF1AADFDCE009E5B73 /* ViewController.swift */,
 				776851F11AADFDCE009E5B73 /* Main.storyboard */,
+				771D273B1AB20C48008B2034 /* Blank_woman_placeholder.svg.png */,
+				771D27391AB20B91008B2034 /* PostViewController.swift */,
 				7755F26F1AB143980031F494 /* UserTableViewController.swift */,
 				776851F41AADFDCE009E5B73 /* Images.xcassets */,
 				776851F61AADFDCE009E5B73 /* LaunchScreen.xib */,
@@ -252,6 +258,7 @@
 				776851F31AADFDCE009E5B73 /* Main.storyboard in Resources */,
 				776851F81AADFDCE009E5B73 /* LaunchScreen.xib in Resources */,
 				776851F51AADFDCE009E5B73 /* Images.xcassets in Resources */,
+				771D273C1AB20C48008B2034 /* Blank_woman_placeholder.svg.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				771D273A1AB20B91008B2034 /* PostViewController.swift in Sources */,
 				776851F01AADFDCE009E5B73 /* ViewController.swift in Sources */,
 				7755F2701AB143980031F494 /* UserTableViewController.swift in Sources */,
 				776851EE1AADFDCE009E5B73 /* AppDelegate.swift in Sources */,
