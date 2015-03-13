@@ -87,6 +87,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
                     UIApplication.sharedApplication().endIgnoringInteractionEvents()
                     if (loginError == nil) {
                         //Succesful login.
+                        self.performSegueWithIdentifier("jumpToUserTable", sender: self)
+                        NSLog("Success!")
                     } else {
                         if let errorString = loginError.userInfo?["error"] as? NSString {
                             error = errorString
