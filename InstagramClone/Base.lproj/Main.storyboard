@@ -137,6 +137,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Users" id="dQd-Qh-oEu">
+                        <barButtonItem key="leftBarButtonItem" title="View Feed" id="NL4-g3-QxZ">
+                            <connections>
+                                <segue destination="Wpi-Hk-AsD" kind="show" id="TMn-up-GEl"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Post" id="1or-Xv-fqW">
                             <connections>
                                 <segue destination="IXK-WV-xBi" kind="show" id="Td1-XG-fUV"/>
@@ -147,6 +152,68 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n5u-tK-Vcw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-49" y="1474"/>
+        </scene>
+        <!--Your Feed-->
+        <scene sceneID="oqo-Io-MmA">
+            <objects>
+                <tableViewController title="Your Feed" id="Wpi-Hk-AsD" customClass="FeedTableViewController" customModule="InstagramClone" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="sWR-C1-uBe">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="240" id="8g6-IO-uUi" customClass="CellTableViewCell" customModule="InstagramClone" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8g6-IO-uUi" id="c6N-hX-GG4">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Blank_woman_placeholder.svg.png" translatesAutoresizingMaskIntoConstraints="NO" id="IGn-Y1-BUh">
+                                            <rect key="frame" x="90" y="8" width="421" height="183"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="421" id="gsL-lT-znu"/>
+                                                <constraint firstAttribute="height" constant="183" id="msY-aU-qUW"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5BG-Sq-IbX">
+                                            <rect key="frame" x="8" y="203" width="584" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aVV-7o-MIp">
+                                            <rect key="frame" x="8" y="222" width="584" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="IGn-Y1-BUh" firstAttribute="top" secondItem="c6N-hX-GG4" secondAttribute="topMargin" id="EYu-Nb-LCw"/>
+                                        <constraint firstItem="aVV-7o-MIp" firstAttribute="trailing" secondItem="c6N-hX-GG4" secondAttribute="trailingMargin" id="I3m-sF-ndU"/>
+                                        <constraint firstItem="aVV-7o-MIp" firstAttribute="leading" secondItem="c6N-hX-GG4" secondAttribute="leadingMargin" id="Ulw-Fo-FVr"/>
+                                        <constraint firstItem="5BG-Sq-IbX" firstAttribute="top" secondItem="IGn-Y1-BUh" secondAttribute="bottom" constant="12" id="eUW-Cv-tRt"/>
+                                        <constraint firstAttribute="centerX" secondItem="IGn-Y1-BUh" secondAttribute="centerX" id="hUN-He-OOI"/>
+                                        <constraint firstItem="5BG-Sq-IbX" firstAttribute="trailing" secondItem="c6N-hX-GG4" secondAttribute="trailingMargin" id="utp-dy-QNY"/>
+                                        <constraint firstItem="5BG-Sq-IbX" firstAttribute="leading" secondItem="c6N-hX-GG4" secondAttribute="leadingMargin" id="wVW-qB-VyI"/>
+                                        <constraint firstItem="aVV-7o-MIp" firstAttribute="top" secondItem="IGn-Y1-BUh" secondAttribute="bottom" constant="31" id="xqD-yU-OXo"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="myImageView" destination="IGn-Y1-BUh" id="DMq-0z-naT"/>
+                                    <outlet property="myTitleLabel" destination="5BG-Sq-IbX" id="QkD-iR-1bh"/>
+                                    <outlet property="myUsernameLabel" destination="aVV-7o-MIp" id="2zw-7g-Ana"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Wpi-Hk-AsD" id="t8T-vN-5Hs"/>
+                            <outlet property="delegate" destination="Wpi-Hk-AsD" id="rRc-Gp-yhj"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yt3-pZ-Ccn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="605" y="734"/>
         </scene>
         <!--Post View Controller-->
         <scene sceneID="fFf-Ja-9IA">

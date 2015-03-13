@@ -29,6 +29,8 @@
 		776852221AADFED2009E5B73 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 776852211AADFED2009E5B73 /* SystemConfiguration.framework */; };
 		776852241AADFEDF009E5B73 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 776852231AADFEDF009E5B73 /* libz.dylib */; };
 		776852261AADFEEC009E5B73 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 776852251AADFEEC009E5B73 /* libsqlite3.dylib */; };
+		77CF1BCF1AB35DBC0005BA85 /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CF1BCE1AB35DBC0005BA85 /* FeedTableViewController.swift */; };
+		77CF1BD11AB35F0D0005BA85 /* CellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CF1BD01AB35F0D0005BA85 /* CellTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,8 @@
 		776852211AADFED2009E5B73 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		776852231AADFEDF009E5B73 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		776852251AADFEEC009E5B73 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		77CF1BCE1AB35DBC0005BA85 /* FeedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTableViewController.swift; sourceTree = "<group>"; };
+		77CF1BD01AB35F0D0005BA85 /* CellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +143,8 @@
 				776851ED1AADFDCE009E5B73 /* AppDelegate.swift */,
 				776851EF1AADFDCE009E5B73 /* ViewController.swift */,
 				776851F11AADFDCE009E5B73 /* Main.storyboard */,
+				77CF1BD01AB35F0D0005BA85 /* CellTableViewCell.swift */,
+				77CF1BCE1AB35DBC0005BA85 /* FeedTableViewController.swift */,
 				771D273B1AB20C48008B2034 /* Blank_woman_placeholder.svg.png */,
 				771D27391AB20B91008B2034 /* PostViewController.swift */,
 				7755F26F1AB143980031F494 /* UserTableViewController.swift */,
@@ -278,6 +284,8 @@
 			files = (
 				771D273A1AB20B91008B2034 /* PostViewController.swift in Sources */,
 				776851F01AADFDCE009E5B73 /* ViewController.swift in Sources */,
+				77CF1BCF1AB35DBC0005BA85 /* FeedTableViewController.swift in Sources */,
+				77CF1BD11AB35F0D0005BA85 /* CellTableViewCell.swift in Sources */,
 				7755F2701AB143980031F494 /* UserTableViewController.swift in Sources */,
 				776851EE1AADFDCE009E5B73 /* AppDelegate.swift in Sources */,
 			);
