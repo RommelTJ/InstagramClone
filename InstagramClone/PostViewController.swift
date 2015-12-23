@@ -7,123 +7,79 @@
 //
 
 import UIKit
+import Parse
 
 class PostViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     @IBOutlet weak var myImageView: UIImageView!
     @IBOutlet weak var myTextField: UITextField!
-    var photoSelected: Bool =  false
-    var activityIndicator:UIActivityIndicatorView = UIActivityIndicatorView()
+    var activityIndicator = UIActivityIndicatorView()
     
     @IBAction func doChooseImage(sender: AnyObject) {
-        var image = UIImagePickerController()
+        let image = UIImagePickerController()
         image.delegate = self
-        //TODO: Add a pop-up to allow user to choose between Camera and PhotoLibrary
         image.sourceType = UIImagePickerControllerSourceType.Camera
         image.allowsEditing = false
         self.presentViewController(image, animated: true, completion: nil)
     }
     
     func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
-        NSLog("Image selected!")
         self.dismissViewControllerAnimated(true, completion: nil)
-        //myImageView.image = image
         myImageView.image = imageWithImage(image, size: CGSize(width: 150, height: 150))
-        photoSelected = true
-    }
-    
-    @IBAction func doLogout(sender: AnyObject) {
-        PFUser.logOut()
-        NSLog("Logged Out")
-        
-        self.performSegueWithIdentifier("logout", sender: self)
     }
     
     @IBAction func doPostImage(sender: AnyObject) {
-        var error = ""
-        if photoSelected == false {
-            error = "Please select an image to post!"
-        } else if (myTextField.text == "") {
-            error = "Please enter a message to post!"
-        }
+        activityIndicator = UIActivityIndicatorView(frame: self.view.frame)
+        activityIndicator.backgroundColor = UIColor(white: 1.0, alpha: 0.5)
+        activityIndicator.center = self.view.center
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
+        view.addSubview(activityIndicator)
+        activityIndicator.startAnimating()
+        UIApplication.sharedApplication().beginIgnoringInteractionEvents()
         
-        if (error != "") {
-            displayAlert("Error with Image", error: error)
-        } else {
-            activityIndicator = UIActivityIndicatorView(frame: CGRectMake(0, 0, 50, 50))
-            activityIndicator.center = self.view.center
-            activityIndicator.hidesWhenStopped = true
-            activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
-            view.addSubview(activityIndicator)
-            activityIndicator.startAnimating()
-            UIApplication.sharedApplication().beginIgnoringInteractionEvents()
-
-            
-            var post = PFObject(className: "Post")
-            post["Title"] = myTextField.text
-            post["username"] = PFUser.currentUser().username
-            post.saveInBackgroundWithBlock({ (success: Bool!, error: NSError!) -> Void in
-                if error == nil {
-                    let imageData = UIImagePNGRepresentation(self.myImageView.image)
-                    let imageFile = PFFile(name: "image.png", data: imageData)
-                    post["imageFile"] = imageFile
-                    post.saveInBackgroundWithBlock({ (success: Bool!, error: NSError!) -> Void in
-                        self.activityIndicator.stopAnimating()
-                        UIApplication.sharedApplication().endIgnoringInteractionEvents()
-                        if error == nil {
-                            self.displayAlert("Success!", error: "Your image posted successfully!")
-                            self.photoSelected = false
-                            self.myImageView.image = UIImage(named: "Blank_woman_placeholder.svg")
-                            self.myTextField.text = ""
-                        } else {
-                            self.displayAlert("Could not post image!", error: "Please try again later")
-                        }
-                    })
-                } else {
-                    self.displayAlert("Could not post image", error: "Please try again later")
-                    self.activityIndicator.stopAnimating()
-                    UIApplication.sharedApplication().endIgnoringInteractionEvents()
-                }
-            })
-        }
-    }
+        let post = PFObject(className: "Post")
+        post["message"] = myTextField.text
+        post["userId"] = PFUser.currentUser()!.objectId!
+        let imageData = UIImagePNGRepresentation(myImageView.image!)
+        let imageFile = PFFile(name: "image.png", data: imageData!)
+        post["imageFile"] = imageFile
+        post.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+            self.activityIndicator.stopAnimating()
+            UIApplication.sharedApplication().endIgnoringInteractionEvents()
+            if error == nil {
+                //Successfully posted the image.
+                self.displayAlert("Image posted!", error: "Your image has been posted successfully!")
+                self.myImageView.image = UIImage(named: "Blank_woman_placeholder")
+                self.myTextField.text = ""
+            } else {
+                self.displayAlert("Could not post image", error: "Please try again later")
+            }
+        }//end saveInBackgroundWithBlock
+    } //end doPostImage
     
     func displayAlert(title:String, error:String) {
-        var alert = UIAlertController(title: title, message: error, preferredStyle: UIAlertControllerStyle.Alert)
+        let alert = UIAlertController(title: title, message: error, preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
             self.dismissViewControllerAnimated(true, completion: nil)
         }))
         self.presentViewController(alert, animated: true, completion: nil)
-    }
+    } //end displayAlert
     
     func imageWithImage(image:UIImage, size:CGSize) -> UIImage {
         UIGraphicsBeginImageContext(size)
         image.drawInRect(CGRectMake(0, 0, size.width, size.height))
-        var finalImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()
+        let finalImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         return finalImage
-    }
+    } //end imageWithImage
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        photoSelected = false
-        myImageView.image = UIImage(named: "Blank_woman_placeholder.svg")
-        myTextField.text = ""
-    }
+    } //end viewDidLoad
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
